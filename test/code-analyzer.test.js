@@ -116,25 +116,6 @@ describe('parseToGraph while loop', () => {
         console.log("---------------------------------------------------------"+graph.includes(nodeReturn));
         assert.equal(graph.includes(nodeReturn), true);
     });
-    // it('add green path', () => {
-    //     const nodes = [{astNode:{type:'BlockStatement'}, parent:{type:'WhileStatement'},next:{}}];
-    //     const edges = [{from:{nodes},to:{nodes}}]
-    //     const addgreenpath=parser.AddGreenPath(edges);
-    //     console.log("---------------------------------------------------------"+addgreenpath);
-    //     assert.equal(addgreenpath, undefined);
-    // });
-    // it('check if next (check green lines 1,2,3)', () => {
-    //     //const next = {to: {type: 'meow'}, from: {green: true, condition: true}};
-    //     const next = {from:{},to:{}};
-    //     const fromResult = [];
-    //     const check1 = parser.checkAddGreenLines1(next);
-    //     const check2 = parser.checkAddGreenLines2(next.from, fromResult);
-    //     const check3 = parser.checkAddGreenLines3(next);
-    //     console.log("---------------------------------------------------------"+!(check1[0] || check1[1]));
-    //     assert.equal(!(check1[0] || check1[1]), true);
-    //     assert.equal(check2, true);
-    //     assert.equal(check3, true);
-    // });
 
 });
 
@@ -154,19 +135,16 @@ describe('test library', () => {
         '}\n','1,2,3');
     it('check if diamond shape while', () => {
         const n4='n4 [label="4 : a < z" style="filled" fillcolor="green"  shape="diamond"]';
-        console.log("---------------------------------------------------------"+graph.includes(n4));
         assert.equal(graph.includes(n4), true);
     });
     it('check if existing after while into return', () => {
         const nodeReturn='n4 -> n8 [label="false"]';
-        console.log("---------------------------------------------------------"+graph.includes(nodeReturn));
         assert.equal(graph.includes(nodeReturn), true);
     });
     it('meow',()=>{
         const output=[];
         const node = {label: 'testNode', shape: ''};
         const result= parser.printAllNodes([node],1,output);
-        console.log("---------------------------------------------------------"+output);
         assert.equal(output.length,2); // 1 edge 1 vertex
     });
 });
